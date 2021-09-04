@@ -1,0 +1,22 @@
+{
+  "name": "magaluprodbd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "swagger": "node src/swagger.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-routes": "^1.0.1",
+    "express-validator": "^6.12.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5",
+    "swagger-autogen": "^2.11.2",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

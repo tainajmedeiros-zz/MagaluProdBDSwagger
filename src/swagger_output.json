@@ -1,0 +1,129 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Magalu Produtos API",
+    "description": "Projeto desenvolvido para ensinar swagger"
+  },
+  "host": "localhost:3001",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Produto",
+      "description": "Endpoints relacionados ao recuso de produto"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/produtos/": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Endpoint parra obter uma lista de produto",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Produto encontrado",
+            "schema": {
+              "$ref": "#/definitions/Produto"
+            }
+          },
+          "400": {
+            "description": "Desculpe, tivemos um problema com a requisição"
+          },
+          "404": {
+            "description": "Produto não encontrado"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Endpoint para criar um produto",
+        "parameters": [
+          {
+            "name": "novoProduto",
+            "in": "body",
+            "description": "Informações do produto",
+            "required": true,
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/NovoProduto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Nome e preço são obrigatórios"
+          }
+        }
+      }
+    },
+    "/fornecedores/": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "Produto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "nome": {
+          "type": "string",
+          "example": "Dell"
+        },
+        "preco": {
+          "type": "number",
+          "example": 12345
+        },
+        "updated_at": {
+          "type": "string",
+          "example": "2021-12-12 03:03:00"
+        },
+        "created_at": {
+          "type": "string",
+          "example": "2021-12-12 03:03:00"
+        }
+      }
+    },
+    "NovoProduto": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "example": "Dell"
+        },
+        "preco": {
+          "type": "number",
+          "example": 12345
+        }
+      },
+      "required": [
+        "nome",
+        "preco"
+      ]
+    }
+  }
+}
