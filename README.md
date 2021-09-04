@@ -86,7 +86,7 @@ Siga as instruções para executar a API.
 Voce tem acesso aos endpoints, produto e fornecedo.
 
 _Produtos Endpoints_
-[![Swagger auth Screen Shot][swagger-auth-screenshot]]
+[![Swagger de produto][swagger-endpoint-produto]]
 
 <!-- CONTACT -->
 ## Contato
